@@ -1,6 +1,8 @@
 var Templates = require('../Templates');
 var PizzaCart = require('./PizzaCart');
-var Pizza_List = require('../Pizza_List');
+var API = require("../API");
+//var Pizza_List = require('../Pizza_List');
+var Pizza_List = {};
 
 //HTML едемент, куди будуть додаватися піци
 var $pizza_list = $("#pizza_list");
@@ -94,8 +96,15 @@ function filterPizza(filter) {
 }
 
 function initialiseMenu() {
-    //Показуємо усі піци
-    showPizzaList(Pizza_List);
+    //Показуємо усі піци, які приймаємо із сервера
+    API.getPizzaList(function (err, list) {
+        if(err){
+            alert(err.message);
+        } else {
+            Pizza_List = list;
+            showPizzaList(Pizza_List);
+        }
+    });
 }
 
 exports.filterPizza = filterPizza;

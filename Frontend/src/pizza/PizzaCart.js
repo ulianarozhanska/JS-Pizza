@@ -1,7 +1,7 @@
 var Templates = require('../Templates');
 var LocalStorage = require('./LocalStorage');
+var API = require('../API');
 
-//Перелік розмірів піци
 var PizzaSize = {
     Big: "big_size",
     Small: "small_size"
@@ -23,11 +23,12 @@ function clean() {
 function addToCart(pizza, size) {
     var bool = true;
     Cart.forEach(function (pizza_cart) {
-        if(pizza === pizza_cart.pizza && size === pizza_cart.size){
+        if(pizza.id === pizza_cart.pizza.id && size=== pizza_cart.size){
             pizza_cart.quantity++;
             bool = false;
         }
     });
+
     if(bool) {
         Cart.push({
             pizza: pizza,
@@ -86,45 +87,75 @@ function updateCart() {
 
     //Очищаємо старі піци в кошику
     $cart.html("");
+    if($(".order-label .count").text()==="0"){
+        $("#butt-order").attr("disabled", "");
+        $cart.html("<div id=\"is-empty\"><p>Пусто в холодильнику?</p><p>Замов піцу!</p></div>");
+    } else {
+        $("#butt-order").removeAttr("disabled");
+        $("#is-empty").hide();
 
-    //Онволення однієї піци
-    function showOnePizzaInCart(cart_item) {
-        var html_code = Templates.PizzaCart_OneItem(cart_item);
+        //Оновлення однієї піци
+        function showOnePizzaInCart(cart_item) {
+            var html_code = $("#butt-order").html() !== undefined ? Templates.PizzaCart_OneItem(cart_item) : Templates.PizzaCart_toBuy(cart_item);
 
-        var $node = $(html_code);
+            var $node = $(html_code);
 
-        $node.find(".plus").click(function () {
-            //Збільшуємо кількість замовлених піц
-            cart_item.quantity += 1;
+            $node.find(".plus").click(function () {
+                //Збільшуємо кількість замовлених піц
+                cart_item.quantity += 1;
 
-            //Оновлюємо відображення
-            updateCart();
-        });
-        $node.find(".minus").click(function () {
-            if (cart_item.quantity === 1) {
+                //Оновлюємо відображення
+                updateCart();
+            });
+            $node.find(".minus").click(function () {
+                if (cart_item.quantity === 1) {
+                    removeFromCart(cart_item);
+                } else {
+                    //Зменшуємо кількість замовлених піц
+                    cart_item.quantity -= 1;
+                }
+
+                //Оновлюємо відображення
+                updateCart();
+            });
+            $node.find(".delete").click(function () {
                 removeFromCart(cart_item);
-            } else {
-                //Зменшуємо кількість замовлених піц
-                cart_item.quantity -= 1;
-            }
 
-            //Оновлюємо відображення
-            updateCart();
-        });
-        $node.find(".delete").click(function () {
-            removeFromCart(cart_item);
+                //Оновлюємо відображення
+                updateCart();
+            });
 
-            //Оновлюємо відображення
-            updateCart();
-        });
+            $cart.append($node);
+        }
 
-        $cart.append($node);
+        Cart.forEach(showOnePizzaInCart);
     }
-
-    Cart.forEach(showOnePizzaInCart);
-
 }
 
+function createOrder(callback) {
+    API.createOrder({
+        name: $('#enter-name').val(),
+        phone: $('#enter-phone').val(),
+        address : $('#enter-address').val(),
+        price: $('#count-sum').text(),
+        order: Cart
+    }, function (err, result) {
+        if(err){
+            return callback(err);
+        }
+        callback(null, result);
+    })
+}
+
+$("#butt-order").click(function () {
+    initialiseCart();
+});
+$("#butt-edit-order").click(function () {
+    initialiseCart();
+});
+
+
+exports.Cart = Cart;
 exports.clean = clean;
 exports.removeFromCart = removeFromCart;
 exports.addToCart = addToCart;
@@ -133,3 +164,4 @@ exports.getPizzaInCart = getPizzaInCart;
 exports.initialiseCart = initialiseCart;
 
 exports.PizzaSize = PizzaSize;
+exports.createOrder = createOrder;

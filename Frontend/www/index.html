@@ -1,96 +1,96 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Pizza</title>
+<!--<!DOCTYPE html>-->
+<!--<html>-->
+<!--<head lang="en">-->
+    <!--<meta charset="UTF-8">-->
+    <!--<title>Pizza</title>-->
 
     <!-- Bootsrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">-->
 
     <!-- LESS основний файл -->
-    <link rel="stylesheet/less" type="text/css" href="assets/less/main.less"/>
+    <!--<link rel="stylesheet/less" type="text/css" href="assets/less/main.less"/>-->
     <!-- LESS JavaScript компілятор -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.3/less.min.js"></script>-->
 
 
-</head>
-<body>
+<!--</head>-->
+<!--<body>-->
 
-<div class="container">
-    <div class="innerContainer">
-        <div class="allTitle">
-            <span class="text">Усі піци</span>
-            <span class="badge orange allCount">8</span>
-        </div>
-        <div class="allPizza">
-            <ul class="nav navPills pizzaTypes" role="tablist">
-                <li class="active"><a href="#" data-filter="5">Усі</a></li>
-                <li><a href="#" data-filter="0">М'ясні</a></li>
-                <li><a href="#" data-filter="1">З ананасами</a></li>
-                <li><a href="#" data-filter="2">З грибами</a></li>
-                <li><a href="#" data-filter="3">З морепродуктами</a></li>
-                <li><a href="#" data-filter="4">Вега</a></li>
-            </ul>
-        </div>
-        <div class="row" id="pizza_list"></div>
-    </div>
-</div>
+<!--<div class="container">-->
+    <!--<div class="innerContainer">-->
+        <!--<div class="allTitle">-->
+            <!--<span class="text">Усі піци</span>-->
+            <!--<span class="badge orange allCount">8</span>-->
+        <!--</div>-->
+        <!--<div class="allPizza">-->
+            <!--<ul class="nav navPills pizzaTypes" role="tablist">-->
+                <!--<li class="active"><a href="#" data-filter="5">Усі</a></li>-->
+                <!--<li><a href="#" data-filter="0">М'ясні</a></li>-->
+                <!--<li><a href="#" data-filter="1">З ананасами</a></li>-->
+                <!--<li><a href="#" data-filter="2">З грибами</a></li>-->
+                <!--<li><a href="#" data-filter="3">З морепродуктами</a></li>-->
+                <!--<li><a href="#" data-filter="4">Вега</a></li>-->
+            <!--</ul>-->
+        <!--</div>-->
+        <!--<div class="row" id="pizza_list"></div>-->
+    <!--</div>-->
+<!--</div>-->
 
-<div class="topPanel">
-    <span id="kma">
-        <span class="title">PIZZA <h3>KMA</h3></span>
-        <img src="assets/images/discount.svg">
-    </span>
-    <div id="topPanelBox">
-        <div class="topRow">
-            <span class="tel visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">(044) 222 5 222</span>
-            <span class="work-hours visible-lg-inline-block visible-md-inline-block">24 години/ 7 днів на тиждень</span>
-            <span class="freeDelivery visible-lg-inline-block">Безкоштовна доставка піци</span>
-            <button class="signInButton btn-warning"><span class="glyphicon glyphicon-user"></span> Ввійти</button>
-        </div>
-        <div class="bottomRow">
-            <a href="#" class="hidden-xs">Піца</a>
-        </div>
-    </div>
-</div>
+<!--<div class="topPanel">-->
+    <!--<span id="kma">-->
+        <!--<span class="title">PIZZA <h3>KMA</h3></span>-->
+        <!--<img src="assets/images/discount.svg">-->
+    <!--</span>-->
+    <!--<div id="topPanelBox">-->
+        <!--<div class="topRow">-->
+            <!--<span class="tel visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">(044) 222 5 222</span>-->
+            <!--<span class="work-hours visible-lg-inline-block visible-md-inline-block">24 години/ 7 днів на тиждень</span>-->
+            <!--<span class="freeDelivery visible-lg-inline-block">Безкоштовна доставка піци</span>-->
+            <!--<button class="signInButton btn-warning"><span class="glyphicon glyphicon-user"></span> Ввійти</button>-->
+        <!--</div>-->
+        <!--<div class="bottomRow">-->
+            <!--<a href="#" class="hidden-xs">Піца</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
-<div class="rightColumn">
-    <div class="orderPanel">
-        <span class="orderLabel"><span class="title">Замовлення</span><span class="count">0</span></span>
-        <button class="cleanOrderBtn btn-secondary">Очистити замовлення</button>
-    </div>
+<!--<div class="rightColumn">-->
+    <!--<div class="orderPanel">-->
+        <!--<span class="orderLabel"><span class="title">Замовлення</span><span class="count">0</span></span>-->
+        <!--<button class="cleanOrderBtn btn-secondary">Очистити замовлення</button>-->
+    <!--</div>-->
 
-    <div class="middlePanel" id="cart"></div>
+    <!--<div class="middlePanel" id="cart"></div>-->
 
-    <div class="bottomPanel">
-        <div class="sum">
-            <span class="title">Сума замовлення</span>
-            <span id="countSum"></span>
-        </div>
-        <div class="toOrder">
-            <button id="buttOrder" class="btn btn-lg btn-primary btn-block">Замовити</button>
-        </div>
-    </div>
-</div>
+    <!--<div class="bottomPanel">-->
+        <!--<div class="sum">-->
+            <!--<span class="title">Сума замовлення</span>-->
+            <!--<span id="countSum"></span>-->
+        <!--</div>-->
+        <!--<div class="toOrder">-->
+            <!--<button id="buttOrder" class="btn btn-lg btn-primary btn-block">Замовити</button>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
-<div class="discount">
-    <img src="assets/images/discount.svg">
-    <div class="title">ЦЬОГО ТИЖНЯ НА ВСЕ</div>
-    <div>-20%</div>
-</div>
+<!--<div class="discount">-->
+    <!--<img src="assets/images/discount.svg">-->
+    <!--<div class="title">ЦЬОГО ТИЖНЯ НА ВСЕ</div>-->
+    <!--<div>-20%</div>-->
+<!--</div>-->
 
-<footer id="footer">
-    <p>Pizza.22 - практичний проект в межах курсу JavaScript в Києво-Могилянській Академії</p>
-    <p>Доставка піци не здійснюється</p>
-</footer>
+<!--<footer id="footer">-->
+    <!--<p>Pizza.22 - практичний проект в межах курсу JavaScript в Києво-Могилянській Академії</p>-->
+    <!--<p>Доставка піци не здійснюється</p>-->
+<!--</footer>-->
 
 <!-- jQuery JavaScript -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<!--<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>-->
 
 <!--Bootsrap JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
 
 <!--Own JavaScript -->
-<script type="text/javascript"  src="assets/js/main.js"> </script>
-</body>
-</html>
+<!--<script type="text/javascript"  src="assets/js/main.js"> </script>-->
+<!--</body>-->
+<!--</html>-->

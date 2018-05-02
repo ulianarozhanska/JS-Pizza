@@ -1,0 +1,52 @@
+<% include common/header.ejs %>
+
+<div class="container">
+    <div class="innerContainer">
+        <div class="allTitle">
+            <span class="text">Усі піци</span>
+            <span class="badge orange all-count">8</span>
+        </div>
+        <div class="allPizza">
+            <ul class="nav navPills pizza-types" role="tablist">
+                <li class="active"><a href="#" data-filter="5">Усі</a></li>
+                <li><a href="#" data-filter="0">М'ясні</a></li>
+                <li><a href="#" data-filter="1">З ананасами</a></li>
+                <li><a href="#" data-filter="2">З грибами</a></li>
+                <li><a href="#" data-filter="3">З морепродуктами</a></li>
+                <li><a href="#" data-filter="4">Вега</a></li>
+            </ul>
+        </div>
+        <div class="row" id="pizza_list">
+        </div>
+    </div>
+</div>
+
+<% include common/topPanel.ejs %>
+
+<div class="rightColumn">
+    <div class="orderPanel">
+        <span class="orderLabel">
+            <span class="title">Замовлення</span>
+            <span class="badge orange count">0</span>
+        </span>
+        <button class="cleanOrderBtn btn btn-secondary">Очистити замовлення</button>
+    </div>
+    <div class="middlePanel" id="cart">
+        <!--<div id="is-empty"><p>Пусто в холодильнику?</p><p>Замов піцу!</p></div>-->
+    </div>
+    <div class="bottomPanel">
+        <div class="sum">
+            <span class="title">Сума замовлення</span>
+            <span id="countSum"></span>
+        </div>
+        <div class="toOrder">
+            <!--<button id="butt-order" class="btn btn-lg btn-primary btn-block">Замовити</button>-->
+            <form>
+                <input id="buttOrder" class="btn btn-lg btn-primary btn-block" type="button" value="Замовити" onclick="window.location.href='/order.html'" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include common/bottom.ejs %>
+<% include common/footer.ejs %>

@@ -1,0 +1,79 @@
+<% include common/header.ejs %>
+<% include common/topPanel.ejs %>
+
+<div class="container">
+    <div class="orderContainer">
+        <div class="userData">
+            <div class="description"><h3>Контактні дані</h3></div>
+            <div class="row">
+                <div class="col-md-7">
+                    <form class="form-horizontal">
+                        <div class="form-group name">
+                            <label class="col-sm-2 control-label">Ім’я</label>
+                            <div class="col-sm-10">
+                                <input class="form-control" type="text" id="enter-name" placeholder="ПІ">
+                                <div id="nameHelp" style="display: none; color: red;">Введіть прізвище та ім'я</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group phone">
+                            <label class="col-sm-2 control-label">Телефон</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="enter-phone" placeholder="+380677777777">
+                                <div id="phoneHelp" style="display: none; color: red;">Введіть номер телефону (+380...)</div>
+                            </div>
+                        </div>
+                        <div class="form-group address">
+                            <label class="col-sm-2 control-label">Адреса</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" id="enter-address" placeholder="Київ, вул. Спаська,2">
+                                <div id="addressHelp" style="display: none; color: red;">Введіть правильну адресу</div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-5 userInfo">
+                    <div class=" bs-callout bs-callout-warning">
+                        <h4>Інформація про замовлення</h4>
+                        <p class="order-summery-time">
+                            <b>Приблизний час доставки:</b> невідомий
+                        </p>
+                        <p class="order-summery-adress">
+                            <b>Адреса доставки:</b> невідома
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="buttNext">
+                    <button class="btn btn-warning btn-block">Далі <span class="glyphicon glyphicon-chevron-right"></span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="rightColumn">
+    <div class="orderPanel">
+        <span class="orderLabel">
+            <span class="title">Замовлення</span>
+            <span class="badge orange count"></span>
+        </span>
+    </div>
+    <div class="middlePanel" id="cart">
+    </div>
+    <div class="bottomPanel">
+        <div class="sum">
+            <span class="title">Сума замовлення</span>
+            <span id="countSum"></span>
+        </div>
+        <div class="toOrder">
+            <form>
+                <input id="buttEditOrder" class="btn btn-lg btn-default btn-block" type="button" value="Редагувати замовлення" onclick="window.location.href='/'" />
+            </form>
+        </div>
+    </div>
+</div>
+
+<% include common/bottom.ejs %>
+<% include common/footer.ejs %>
