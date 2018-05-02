@@ -1,16 +1,23 @@
 @mainColor: blue;
-
 @import "pizza/pizza-card";
 @import "top";
 @import "right";
-button:focus {
-  outline: none;
+
+button:active, button:focus {
+  outline: none !important;
+}
+
+button::-moz-focus-inner {
+  border: 0 !important;
 }
 
 .container {
-  padding-right: @RightColumnWidth;
-  margin-top: @TopRowHeight;
+  background-color: #fafff3;
+  margin: 0;
+  padding-right: @RightColumnWidth + 15px;
+  padding-top: @TopRowHeight + 15px;
   height: 100%;
+  width: 100%;
 }
 
 .innerContainer {
@@ -72,4 +79,51 @@ button:focus {
   background-color: #fff;
   text-align: center;
   font-size: 15px;
+}
+
+.allTitle {
+  margin-bottom: 10px;
+  text-align: center;
+  font-size: xx-large;
+
+  .allCount {
+    margin-left: @distance;
+  }
+}
+
+.allPizza {
+  text-align: center;
+  margin-bottom: @distance*2;
+
+  .pizzaTypes {
+    display: inline-block;
+  }
+
+  .navPills > li > a {
+    color: @color;
+  }
+
+  .navPills > li.active > a, .navPills > li.active > a:hover, .navPills > li.active > a:focus {
+    color: white;
+    background-color: @color;
+  }
+}
+
+@media (max-width: 800px) {
+  .rightColumn {
+    width: 290px;
+  }
+  .topPanel, #topPanelBox{
+    right: 290px;
+  }
+
+  .orderLabel {
+    .title {
+      font-size: 10px;
+    }
+  }
+}
+
+.orange {
+  background-color: #EA862E;
 }

@@ -12,4 +12,14 @@ $(function(){
     PizzaMenu.initialiseMenu();
 
 
+    $('.clean-order').click(function () {
+        PizzaCart.clean();
+    });
+
+    $(".nav-pills li").on("click", function() {
+        $(".nav-pills li").removeClass("active");
+        $(this).addClass("active");
+        var selector = $(this).find('a').data('filter');
+        PizzaMenu.filterPizza(selector);
+    });
 });

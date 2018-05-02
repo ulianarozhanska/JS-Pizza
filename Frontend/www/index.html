@@ -15,62 +15,24 @@
 
 </head>
 <body>
-<div id="cart"></div>
 
 <div class="container">
     <div class="innerContainer">
-        <div class="row" id="pizza_list">
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail pizza-card">
-                    <img src="assets/images/pizza_1.jpg">
-
-                    <div class="caption"><h3>Thumbnail label</h3>
-
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                        <p>
-                            <a href="#" class="btn btn-primary">Button 2</a>
-                            <a href="#" class="btn btn-default">Button 1</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail pizza-card">
-                    <img src="assets/images/pizza_2.jpg">
-
-                    <div class="caption"><h3>Thumbnail label</h3>
-
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                        <p>
-                            <a href="#" class="btn btn-primary">Button 3</a>
-                            <a href="#" class="btn btn-default">Button 4</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-6 col-md-4">
-                <div class="thumbnail pizza-card">
-                    <img src="assets/images/pizza_3.jpg">
-
-                    <div class="caption"><h3>Thumbnail label</h3>
-
-                        <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta
-                            gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-
-                        <p>
-                            <a href="#" class="btn btn-primary">Button 5</a>
-                            <a href="#" class="btn btn-default">Button 6</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+        <div class="allTitle">
+            <span class="text">Усі піци</span>
+            <span class="badge orange allCount">8</span>
         </div>
+        <div class="allPizza">
+            <ul class="nav navPills pizzaTypes" role="tablist">
+                <li class="active"><a href="#" data-filter="5">Усі</a></li>
+                <li><a href="#" data-filter="0">М'ясні</a></li>
+                <li><a href="#" data-filter="1">З ананасами</a></li>
+                <li><a href="#" data-filter="2">З грибами</a></li>
+                <li><a href="#" data-filter="3">З морепродуктами</a></li>
+                <li><a href="#" data-filter="4">Вега</a></li>
+            </ul>
+        </div>
+        <div class="row" id="pizza_list"></div>
     </div>
 </div>
 
@@ -84,7 +46,7 @@
             <span class="tel visible-xs-inline-block visible-sm-inline-block visible-lg-inline-block visible-md-inline-block">(044) 222 5 222</span>
             <span class="work-hours visible-lg-inline-block visible-md-inline-block">24 години/ 7 днів на тиждень</span>
             <span class="freeDelivery visible-lg-inline-block">Безкоштовна доставка піци</span>
-            <button class="signInButton btn-warning">Ввійти</button>
+            <button class="signInButton btn-warning"><span class="glyphicon glyphicon-user"></span> Ввійти</button>
         </div>
         <div class="bottomRow">
             <a href="#" class="hidden-xs">Піца</a>
@@ -94,32 +56,17 @@
 
 <div class="rightColumn">
     <div class="orderPanel">
-        <span class="orderLabel"><span class="title">Замовлення</span><span class="count">3</span></span>
+        <span class="orderLabel"><span class="title">Замовлення</span><span class="count">0</span></span>
         <button class="cleanOrderBtn btn-secondary">Очистити замовлення</button>
     </div>
 
-    <div class="middlePanel">
-        <div class="row"><p class="orderNameSize"><strong>BBQ (Мала)</strong></p>
-            <div class="orderInfo">
-                <img class="imgSize" src="assets/images/size-icon.svg">
-                <span class="size"><small>30</small></span>
-                <img class="imgWeight" src="assets/images/weight.svg">
-                <span class="weight"><small>460</small></span>
-            </div>
-
-            <div class="pricePanel">
-                <span class="price"><strong>556 грн.</strong></span>
-                <button type="button" class="btn btn-danger circle">-</button>
-                <span class="amount"><strong>4</strong></span>
-                <button type="button" class="btn btn-success circle">+</button>
-                <button type="button" class="btn btn-default circle">X</button>
-                <img class="imgPizza" alt="Піца" src="assets/images/pizza_2.jpg">
-            </div>
-        </div>
-    </div>
+    <div class="middlePanel" id="cart"></div>
 
     <div class="bottomPanel">
-        <div class="sum"><span class="title">Сума замовлення</span> <span id="countSum">924 грн.</span></div>
+        <div class="sum">
+            <span class="title">Сума замовлення</span>
+            <span id="countSum"></span>
+        </div>
         <div class="toOrder">
             <button id="buttOrder" class="btn btn-lg btn-primary btn-block">Замовити</button>
         </div>
@@ -144,6 +91,6 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
 <!--Own JavaScript -->
-<!--<script type="text/javascript"  src="assets/js/main.js"> </script>-->
+<script type="text/javascript"  src="assets/js/main.js"> </script>
 </body>
 </html>

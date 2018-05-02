@@ -10,7 +10,7 @@
   width: 100%;
   top: 0;
   right: 0;
-  padding-top: 13%;
+  padding-top: 10%;
 
   .orderLabel {
     display: inline-block;
@@ -38,7 +38,12 @@
     font-size: 12px;
     background-color: white;
     width: 49%;
+  }
 
+  .cleanOrderBtn {
+    color: #acacac;
+    border: white;
+    padding: 5px;
   }
 }
 
@@ -48,10 +53,7 @@
   top: @TopHeight;
   bottom: @BottomHeight;
   padding: 10px;
-  //margin-top: @TopHeight + 10px;
-  //padding-bottom: @BottomHeight  + 10px;
   width: 100%;
-  //height: 100%;
   box-sizing: border-box;
   overflow-y: auto;
   overflow-x: hidden;
@@ -61,6 +63,7 @@
     height: 120px;
     padding: 20px 61px 10px 24px;
     overflow: hidden;
+    position: relative;
 
     .orderNameSize {
       line-height: 16px;
@@ -70,7 +73,8 @@
 
     .orderInfo {
       margin-bottom: 10px;
-      .img-weight {
+
+      .imgWeight {
         padding-left: 10px;
       }
     }
@@ -90,15 +94,15 @@
         color: @color;
         margin-left: 13px;
       }
+    }
 
-      .imgPizza {
-        position: absolute;
-        right: -48px;
-        top: 15px;
-        border-radius: 50% 0 0 50%;
-        max-height: 96px;
-        max-width: 96px;
-      }
+    .imgPizza {
+      position: absolute;
+      right: -48px;
+      top: 15px;
+      border-radius: 50% 0 0 50%;
+      max-height: 96px;
+      max-width: 96px;
     }
   }
 }
@@ -149,9 +153,4 @@
   font-size: 12px;
   line-height: 1.428571429;
   border-radius: 50%;
-}
-
-.cleanOrderBtn {
-  color: #acacac;
-  border: white;
 }
